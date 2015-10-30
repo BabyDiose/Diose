@@ -1,0 +1,66 @@
+<!Doctype html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml/DTD/xhtml-transitonal.dtd">
+<html>
+	<head>
+		<title>for tab</title>
+		<meta charset="utf-8">
+		<style type="text/css">
+		body{
+			margin:0px;
+			padding:0px;
+		}
+		.tab {
+			margin:200px;
+		}
+		li {
+			list-style:none;
+			height:30px;
+			line-height:30px;
+			background:#ccc;
+			float:left;
+			padding:0 10px;
+			cursor:pointer;
+			
+		}
+		.clearBoth{
+			clear:both;
+		}
+		.content{
+			border:1px solid red;
+			height:150px;
+			width:400px;
+		}
+		.icontent{
+			display:none;
+			
+		}
+		.on{
+			background-color:#0c0;
+			color:#000;
+		}
+		</style>
+	</head>
+	<body>
+	<div class="tab">
+		<ul class="title">
+			<li class="on">综合</li>
+			<li>新闻</li>
+			<li>活动</li>
+		</ul>
+		<div class="clearBoth"></div>
+		<div class="content">
+			<div class="icontent"style="display:block;">综合类的内容</div>
+			<div class="icontent">新闻类的内容</div>
+			<div class="icontent">活动类的内容</div>
+		</div>
+	</div>
+	</body>
+	<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script> 
+	<script type="text/javascript">
+        $('.title').find("li").click(function(){
+                $this = $(this);
+                var index = $this.prevAll().length;
+                $this.siblings("li").removeClass("on").end().addClass("on");
+                $this.parent().next().next(".content").find(".icontent").hide().eq(index).show();
+        })	
+	</script>
+</html>

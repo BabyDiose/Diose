@@ -1,0 +1,72 @@
+<!Doctype html PUBLIC "-//W3C/DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<body>
+	<head>
+		<title>for div drag</title>
+		<meta charset="utf-8">
+		<style type="text/css">
+		body{
+			margin:0px;
+			padding:0px;
+			font-size:!6px;
+		}
+		#box{
+			position:absolute;
+			left:100px;
+			top:100px;
+			padding:5px;
+			background:#f0f3f9;
+			-moz-box-shadow:2px 2px 4px #666666;
+			-webkit-box-shadow:2px 2px 4px #666666;
+			box-shadow:2px 2px 4px #666666;
+		}
+		#main{<a href="drag.html" id="" title="drag">drag</a>
+			border:1px solid #a0b3d6; 
+			background:white;
+		}
+		#bar{
+			width:300px;
+			background:#beceeb;
+			padding:5px;
+			border-bottom:1px solid #a0b3d6;
+		}
+		#content{
+			height:200px;
+			padding:5px;
+		}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<div id="main">
+				<div id="bar">标题</div>
+				<div id="content">内容</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+	<script type="text/javascript">
+$(function(){
+	var _flag = false;
+	var _x , _y;
+	$("#bar").click(function(){
+		
+	}).mousedown(function(e){
+		_flag = true;
+		 _x = e.pageX - parseInt($("#box").css("left"));
+		 _y = e.pageY - parseInt($("#box").css("top"));
+	})
+	$(document).mousemove(function(e){
+		x = e.pageX - _x;
+		y = e.pageY - _y;
+		if(_flag){
+			$("#box").css({
+				top:y,
+				left:x
+			})
+		}
+	}).mouseup(function(){
+		_flag = false;
+	})
+})
+	</script>
+</body>

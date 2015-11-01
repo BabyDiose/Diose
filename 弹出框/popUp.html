@@ -1,0 +1,86 @@
+<!Doctype html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml/DTD/xhtml-transitional.dtd">
+<html>
+	<head>
+		<title>this is for popUp</title>
+		<meta charset="utf-8">
+		<style type="text/css">
+		body{
+			margin:0px;
+			padding:0px;
+		}
+		.mark{
+            position: absolute; 
+            top: 0px; 
+            
+            background-color: #B2B2B2;  
+            z-index: 999; 
+            left: 0px;  
+            opacity:0.5; 
+            -moz-opacity:0.5; 
+		}
+		.popUp{
+			position:fixed;
+			top:100px;
+			left:100px;
+		}
+		.dialog{
+			position:absolute;
+			top:100px;
+			left:300px;
+			display:none;
+			width:200px;
+			height:100px;
+			background:#f0f3f9;
+			-moz-box-shadow:2px 2px 4px #666666;
+			-webkit-box-shadow:2px 2px 4px #666666;
+			z-index:99999;
+		}
+		.dialog-title{
+			background:#beceeb;
+			padding:5px;
+			border-bottom:1px solid #a0b3d6;
+		}
+		.dialog-content{
+			margin:10px;
+		}
+		.dialog-act{
+			margin-top:20px;
+		}
+
+		</style>
+	</head>
+	<body>
+		<div class="mark"></div>
+		<div class="popUp">点击我出现对话框和遮罩层</div>	
+		<div class="dialog">
+			<div class="dialog-title">
+				这里是标题
+			</div>
+			<div class="dialog-content">
+				这里是内容
+			</div>
+			<div class="dialog-act">
+				<input type="button" value="确认" class="ok">
+				<input type="button" value="取消" class="close">
+			</div>
+		</div>
+		
+	</body>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+	<script type="text/javascript">
+$(function(){
+	$(".popUp").click(function(){
+		$(".mark").css({
+			width:$(document).width(),
+			height:$(document).height()
+		}).show();
+		$(".dialog").show();
+	})
+	
+	$(".close").click(function(){
+		$(".dialog").hide();
+		$(".mark").hide()
+	});
+})
+	</script>
+</html>

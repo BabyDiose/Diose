@@ -1,0 +1,58 @@
+<!Doctype html PUBLIC "-//W3C/DTD XHTML 1.0 Transitional//EN" "http://www.w3c.org/TR/xhtml/DTD/xhtml-transitional.dtd">
+<html>
+	<head>
+		<meta charset="utf-8">
+		<style type="text/css">
+		body{
+			margin:0px;
+			padding:0px;
+		}
+		#focusLabel{
+			margin:50px;
+		}
+		#focusLabel label{
+			width:100px;
+			height:20px;
+			line-height:20px;
+			display:inline-block;
+		}
+		#focusLabel input{
+			width:100px;
+			height:20px;
+			border:solid 1px #ccc;
+			box-shadow:0 1px 10px rgba(0,0,0,0.1) inset;
+			border-radius:3px;
+		}
+		#focusLabel input:focus{
+			box-shadow:0 0 4px rgba(255,153,164,0.8);
+			border:solid 1px #B00000;
+			border-radius:3px;
+		}
+		</style>
+	</head>
+	<body>
+	<form class="" id="focusLabel">
+		<div class ="mail">
+			<label>注册邮箱</label>
+			<input type="text" placeholder="请输入邮箱"/>
+		</div>
+		<div class ="password">
+			<label>密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码</label>
+			<input  type="text" placeholder="请输入密码"/>
+		</div>
+		<div class="confirmPassword">
+			<label>确认密码</label>
+			<input  type="text" placeholder="请输入确认秘密"/>
+		</div>
+	</form>
+	</body>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+	<script type="text/javascript">
+		$("#focusLabel input").each(function(){
+			var thisValue = $("#focusLabel input").val();
+			if(thisValue != ""){
+				$("#focusLabel input").removeAttr("placeholder");
+			}
+		})
+	</script>
+</html>

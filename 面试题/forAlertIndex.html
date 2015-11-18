@@ -1,0 +1,27 @@
+<!Doctype html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3c.org/TR/xhtml/DTD/xhtml-Transitional.dtd">
+<html>
+	<head>
+		<title></title>
+		<meta charset="utf-8"/>
+	</head>
+<body>
+	<p>test1</p>
+	<p>test2</p>
+	<p>test3</p>
+	<p>test4</p>
+	点击每个p时候，弹出p的索引。
+
+	<script type="text/javascript">
+	window.onload = function (){
+		var value = document.getElementsByTagName("p");
+		for(var i = 0;i<value.length;i++){
+			value[i].onclick = (function(n){
+				return function(){
+					alert(n);
+				}
+			})(i)
+		}
+	}
+	</script>
+ </body>
+ </html>

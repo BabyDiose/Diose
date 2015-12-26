@@ -1,0 +1,62 @@
+<!Doctype html>
+<!--
+	chrome and opera 支持大多数控件，但在ff和safari或者ie只能显示为普通字段。
+回退方案：
+先检查浏览器是否支持日历控件，如果不支持可以用第三方控件。
+-->
+<html>
+	<head>
+		<title>web form</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="style.css">
+		<script src="modernizr.js"></script>
+	</head>
+	<body>
+		<form method="post" action="">
+			<fieldset>
+				<legend>project information</legend>
+				<ol>
+					<li>
+						<label for="name">name</label>
+						<input type="text" name="name"  autofocus required id="name" placeholder="john"/>
+					</li>
+					<li>
+						<label for="password">password</label>
+						<input type="password" id="password" placeholder="Type your password" pattern="^(?=.{8,})(?=.*[a-z])(.*[\d])(?=.*[\W]).*$" title="Password must be 8 or more characters with at least one number, an uppercase letter, and one special character">
+					</li>
+					<li>
+						<label for="priority">priority</label>
+						<input type="range" name="priority" id="priority" min="0" max="10" value="0" >
+					</li>
+					<li>
+						<label for="estimated_hours">estimated hours</label>
+						<input type="number" name="estimated_hours" min="0" max="10" id="estimated_hours" placeholer="">
+					</li>
+					<li>
+						<label for="start_time">start_time</label>
+						<input type="date" name="start_time" id="start_time" value="2015-12-01">
+					</li>
+					<li>
+						<label for="email">email</label>
+						<input type="email" name="email" id="email" required placeholder="123@abc.com">
+					</li>
+					
+					<li>
+						<label for="url">url</label>
+						<input type="url" name="url" required id="url">
+					</li>
+					
+					<li>
+						<label for="color">color</label>
+						<input type="color" name="color" id="color">
+					</li>
+					<li>
+						<input type="submit" value="submit">
+					</li>
+				</ol>
+			</fieldset>
+		</form>
+	</body>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">></script>
+	<script src="fallback.js"></script>
+</html>

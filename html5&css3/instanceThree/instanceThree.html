@@ -1,0 +1,31 @@
+<!Doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<h1>Human Resources info</h1>
+		<ul>
+			<li>
+			<a href="holiday_pay.html"
+				data-width="600"
+				data-height="400"
+				title="holiday pay"
+				class="popup">Holiday pay
+			</li>
+		</ul>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script>
+        $("a.popup").click(function(event){
+          event.preventDefault();
+          var link = this;
+          var href = link.getAttribute("href");
+          var height = link.getAttribute("data-height");
+          var width = link.getAttribute("data-width");
+         
+          window.open (href,"popup",
+            "height=" + height +",width=" + width + "");          
+        });
+		</script>
+	</body>
+</html>

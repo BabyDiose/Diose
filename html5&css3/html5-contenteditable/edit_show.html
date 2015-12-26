@@ -1,0 +1,57 @@
+<!Doctype html>
+<html lang="en-US">
+	<head>
+		<meta charset="utf-8">
+		<title>Edit you profile</title>
+		<style>
+		ol{
+			padding:0px;
+			margin:0px;
+			list-style:none;
+		}
+		ol>li{
+			padding:0px;
+			clear:both;
+			margin:0 0 10px 0;
+		}
+		label{
+			float:left;
+			width:150px;
+		}
+		</style>
+		
+	</head>
+	<body>
+		<form action="/users/1" method="post">
+			<fieldset id="your_information">
+				<legent>your Information</legent>
+				<ol>
+					<li>
+						<label for="Name">Name</label>
+						<input id="name" type="text" name="name" value=""></input>
+					</li>
+					<li>
+						<label for="city">City</label>
+						<input id="city" type-"text" name="city" value=""></input>
+					</li>
+					<li>
+						<label for="state">State</label>
+						<input id="state" type="text" name="state" value=""></input>
+					</li>
+					<li>
+						<label for="postCode">Postcode</label>
+						<input id="post_code" type="text" name="postCode" value=""></input>
+					</li>
+					<li>
+						<label for="email">Email</label>
+						<input id="email" type="text" name="emial" value=""></input>
+					</li>
+				</ol>
+			</fieldset>
+			<p><input type="submit" value="Save"></p>
+		</form>	
+		
+	</body>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">></script>
+	<script src="edit.js"></script>
+</html>

@@ -1,0 +1,40 @@
+<!Doctype html>
+<html lang="en-US">
+	<head>
+		<meta charset="utf-8">
+		<title>contentedit</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body id="forms">
+		
+		<h1>User Information</h1>
+		<div id="status"></div>
+		<section>
+				<p><a href="edit_show.html">edit your profile</a></p>
+		</section>
+		<ul data-url="/users/1">
+			<li>
+				<b>Name</b>
+				<span id="name" contenteditable>Hugh Mann</span>
+			</li>
+			<li>
+				<b>city</b>
+				<span id="city" contenteditable>Anytown</span>
+			</li>
+			<li>
+				<b>state</b>
+				<span id="state" contenteditable>OH</span>
+			</li>
+			<li>
+				<b>Post Code</b>
+				<span id="postCode" contenteditable>92110</span>
+			</li>
+			<li>
+				<b>Email</b>
+				<span id="email" contenteditable>boss@abc.com</span>
+			</li>
+		</ul>
+	</body>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">></script>
+	<script src="edit.js"></script>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<title>混搭</title>
+	</head>
+	<body>
+		<script src="http://echarts.baidu.com/build/dist/echarts.js"></script>
+		
+		<script type="text/javascript">
+			require.config({
+					paths:{
+						echarts:'http://echarts.baidu.com/build/dist'
+					}
+				});
+			
+			require(
+				[
+					'echarts',
+					'echarts/chart/bar',
+					'echarts/chart/line'
+				],
+				function(ec){
+					
+				}
+				
+			)
+		</script>
+	</body>
+</html>

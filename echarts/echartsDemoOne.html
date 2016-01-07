@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Echarts</title>
+	</head>
+	<body>
+		<div id="main" style="height:200px;width:800px;"></div>
+		<!--ECharts单文件引入 -->
+		<script src="http://echarts.baidu.com/build/dist/echarts.js"></script>
+		<script type="text/javascript">
+		//路径配置
+			require.config({
+				paths:{
+					echarts:"http://echarts.baidu.com/build/dist"
+				}
+			});
+		//使用
+			require(
+				[
+					'echarts',
+					'echarts/chart/bar'//使用柱状图就加载bar模块，按需加载
+				],
+				function(ec){
+					var myChart = ec.init(document.getElementById('main'));
+					var options = {
+						tooltip:{
+							show:true
+						},
+						legend:{
+							data:['销量']
+						},
+						xAxis:[
+							{
+								type:'category',
+								data:["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
+							}
+						],
+						yAxis:[
+							{
+								type:'value'
+							}
+						],
+						series:[
+							{
+								"name":"销量",
+								"type":"bar",
+								"data":[5,20,40,10,10,20],
+								"clickable":false
+							}
+						]
+					};				
+					myChart.setOption(options); 
+				}
+			);
+		</script>
+	</body>
+</html>
